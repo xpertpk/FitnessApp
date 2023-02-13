@@ -15,7 +15,7 @@ const RestScreen = () => {
         clearTimeout(timer);
       }
       setTimeLeft(timeLeft - 1)
-    }, 2000);
+    }, 1000);
   }
 
   useEffect(() => {
