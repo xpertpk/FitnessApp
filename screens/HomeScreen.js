@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View, SafeAreaView, Image , ScrollView} from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import FitnessCard from '../components/FitnessCard';
+import { FitnessItems } from '../Context';
 
 const HomeScreen =()=> {
+  const {workouts, calories, minutes} = useContext(FitnessItems);
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{marginTop:40}}>
 
@@ -11,15 +13,15 @@ const HomeScreen =()=> {
         <Text style={{color: `#FFF`, fontSize:16, fontWeight:`600`}}>SAM Fitness Club</Text>
         <View style={{flexDirection: `row`, alignItems:`center`, justifyContent:`space-between`}}>
           <View>
-            <Text style={{color:`#fff`, fontSize:18, fontWeight:`bold`, marginTop:20, textAlign:`center`}}>0</Text>
+            <Text style={{color:`#fff`, fontSize:18, fontWeight:`bold`, marginTop:20, textAlign:`center`}}>{workouts}</Text>
             <Text style={{color:`#fff`, fontSize:12, fontWeight:`bold`, marginTop:0, textAlign:`center`}}>Workouts</Text>
           </View>
           <View>
-            <Text style={{color:`#fff`, fontSize:18, fontWeight:`bold`, marginTop:20, textAlign:`center`}}>0</Text>
+            <Text style={{color:`#fff`, fontSize:18, fontWeight:`bold`, marginTop:20, textAlign:`center`}}>{calories}</Text>
             <Text style={{color:`#fff`, fontSize:12, fontWeight:`bold`, marginTop:0, textAlign:`center`}}>Kcal</Text>
           </View>
           <View>
-            <Text style={{color:`#fff`, fontSize:18, fontWeight:`bold`, marginTop:20, textAlign:`center`}}>0</Text>
+            <Text style={{color:`#fff`, fontSize:18, fontWeight:`bold`, marginTop:20, textAlign:`center`}}>{minutes}</Text>
             <Text style={{color:`#fff`, fontSize:12, fontWeight:`bold`, marginTop:0, textAlign:`center`}}>Mins</Text>
           </View>
         </View>
